@@ -1,2 +1,2 @@
 # studious-octo-fortnight
-PHP package
+PHP package for get .env file and handle it
