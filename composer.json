@@ -1,0 +1,22 @@
+{
+    "name": "amir/studious-octo-fortnight",
+    "description": "php package",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Amir\\StudiousOctoFortnight\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "amir",
+            "email": "amirjoun2@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.0"
+    }
+}
