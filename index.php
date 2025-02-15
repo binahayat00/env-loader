@@ -1,9 +1,14 @@
 <?php
 
-use Amir\StudiousOctoFortnight\Env;
+use SimpleEnv\Env;
+use SimpleEnv\Services\FileService;
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
-$randomArray = (new Env)->get(__DIR__);
+$randomArray = (
+    new Env(
+        new FileService()
+    )
+)->get(__DIR__);
 
 var_dump($randomArray);

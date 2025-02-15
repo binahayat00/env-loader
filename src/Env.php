@@ -1,23 +1,26 @@
 <?php
 
-namespace Amir\StudiousOctoFortnight;
+namespace SimpleEnv;
+
+use SimpleEnv\Enums\File;
+use SimpleEnv\Contracts\FileServiceInterface;
 
 class Env
 {
     public function __construct(
+        public FileServiceInterface $fileService
     ) {
     }
 
-    public function get($path): array
+    public function get($path, $fileName = File::DEFAULTNAME->value): array
     {
-        $defaultName = '.env';
-        $filePath = "$path/$defaultName";
+        $filePath = "$path/$fileName";
 
-        if (!$this->checkFileExist($filePath)) {
+        if (!$this->fileService->checkFileExist($filePath)) {
             return [];
         }
 
-        $content = $this->getFile($filePath);
+        $content = $this->fileService->getFileContent($filePath);
 
         if (!$content) {
             return [];
@@ -70,24 +73,5 @@ class Env
     public function setToEnv(string $key, string $value): void
     {
         $_ENV[$key] = $value;
-    }
-
-    public function checkFileExist(string $filePath): bool
-    {
-        if (!file_exists($filePath)) {
-            return false;//TODO Exception 
-        }
-        return true;
-    }
-
-    public function getFile(string $filePath)
-    {
-        $content = file_get_contents($filePath, false);
-
-        if (strlen($content) === 0) {
-            return false;//TODO Exception 
-        }
-
-        return $content;
     }
 }
