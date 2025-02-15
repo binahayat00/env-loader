@@ -1,10 +1,10 @@
 {
-    "name": "amir/studious-octo-fortnight",
+    "name": "amir/simple-env",
     "description": "php package",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Amir\\StudiousOctoFortnight\\": "src/"
+            "SimpleEnv\\": "src/"
         }
     },
     "authors": [
