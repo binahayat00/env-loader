@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace EnvLoader\Services;
 
+use EnvLoader\Exceptions\FileException;
 use EnvLoader\Contracts\Services\FileServiceInterface;
 
 class FileService implements FileServiceInterface
@@ -11,7 +12,7 @@ class FileService implements FileServiceInterface
     public function checkFileExist(string $filePath): bool
     {
         if (!file_exists($filePath)) {
-            throw new \RuntimeException("Env file not found at: $filePath");
+            throw new FileException("Env file not found at: $filePath");
         }
 
         return true;
