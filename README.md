@@ -5,9 +5,13 @@ A lightweight and efficient PHP package for loading `.env` files and managing en
 ## 🚀 Features
 
 ✔️ Reads and parses `.env` files efficiently.
+
 ✔️ Supports multi-line and quoted values.
+
 ✔️ Handles comments and whitespace gracefully.
+
 ✔️ Provides a flexible configuration system.
+
 ✔️ Uses a service-based architecture for extensibility.
 
 ### 📦 Installation
