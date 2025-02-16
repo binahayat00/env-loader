@@ -1,14 +1,13 @@
 <?php
 
-use SimpleEnv\Env;
-use SimpleEnv\Services\FileService;
+declare(strict_types=1);
+
+use EnvLoader\Factories\EnvFactory;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$randomArray = (
-    new Env(
-        new FileService()
-    )
-)->get(__DIR__);
+$env = EnvFactory::create();
 
-var_dump($randomArray);
+var_dump($env->load(__DIR__));
+
+//TODO need to delete
