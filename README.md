@@ -83,13 +83,15 @@ return [
 ## 📌 Error Handling
 
 EnvLoader automatically detects invalid regex operations and missing files.
-It throws RuntimeException when errors occur.
+It throws custom Exception when errors occur.
 
 Example:
 
 ```bash
 
-throw new \RuntimeException("Config file not found: $filePath");
+throw new EnvLoader\Exceptions\FileException("Config file not found: $filePath");
+
+throw new EnvLoader\Exceptions\RegexException("Error in Regex: $errorMessage", $pattern, $text);
 
 ```
 
