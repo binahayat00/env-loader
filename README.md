@@ -22,7 +22,7 @@ Install via Composer(soon):
 
 #### 1️⃣ Load Environment Variables
 
-```bash
+```php
 
 use EnvLoader\Factories\EnvFactory;
 
@@ -32,7 +32,7 @@ $env = EnvFactory::create();
 
 #### 2️⃣ Access Configuration Values
 
-```bash
+```php
 
 use EnvLoader\Services\ConfigLoader;
 use EnvLoader\Services\Config;
@@ -48,7 +48,7 @@ $fileName = $configService->get('file.name.default');
 
 ### 📁 Project Structure
 
-```bash
+```css
 
 📦 EnvLoader
  ┣ 📂 configs
@@ -74,7 +74,7 @@ $fileName = $configService->get('file.name.default');
 By default, EnvLoader expects a .env file in your project's root.
 You can change this by create a config file in your project file like below and pass your path and your file name based on **Usage** part:
 
-```bash
+```php
 
 return [
     'file' => [
@@ -91,7 +91,7 @@ It throws RuntimeException when errors occur.
 
 Example:
 
-```bash
+```php
 
 throw new \RuntimeException("Config file not found: $filePath");
 
@@ -103,7 +103,7 @@ Run PHPUnit tests:
 
 ```bash
 
-Run PHPUnit tests:
+vendor/bin/phpunit
 
 ```
 
