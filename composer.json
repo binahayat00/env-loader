@@ -1,10 +1,15 @@
 {
-    "name": "amir/simple-env",
+    "name": "amir/env-loader",
     "description": "php package",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "SimpleEnv\\": "src/"
+            "EnvLoader\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "authors": [
